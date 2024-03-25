@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: donet-quay-annotation-test-gitops
+  description: This is GitOps manifest for donet-quay-annotation-test   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: donet-quay-annotation-test
+    janus-idp.io/tekton: donet-quay-annotation-test 
+    backstage.io/kubernetes-id: donet-quay-annotation-test 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:donet-quay-annotation-test

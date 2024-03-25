@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: donet-quay-annotation-test
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: donet-quay-annotation-test 
+  name: donet-quay-annotation-test
+spec:
+  ports:
+  - port: 8081 
+    targetPort: 8081 
+  selector:
+    app.kubernetes.io/instance: donet-quay-annotation-test 
